@@ -1,0 +1,69 @@
+!!python/object:argparse.Namespace
+amp: true
+augs_mix:
+- mixup
+- timemix
+- freqmix
+- phmix
+augs_noise:
+- awgn
+- abgn
+- apgn
+- argn
+- avgn
+- aun
+- phn
+- sine
+augs_signal:
+- amp
+- neg
+- tshift
+- tmask
+- ampsegment
+- cycshift
+batch_size: 32
+data_path: data/speech_commands_V2
+data_subtype: balanced
+dataset: speechcommands
+dim_feedforward: 512
+ds_factors:
+- 4
+- 4
+- 4
+ema: 0.995
+emb_dim: 128
+epoch_mix: 12
+ext_pretrained: null
+filter_bias_and_bn: true
+fold_id: 0
+gpu_ids:
+- 0
+kd_model: null
+load_path: null
+local_rank: 0
+log_interval: 100
+loss_type: label_smooth
+max_lr: 0.0003
+mix_loss: bce
+mix_ratio: 1.0
+model_type: SoundNetRaw
+multilabel: false
+n_classes: 35
+n_epochs: 1500
+n_head: 8
+n_layers: 4
+nf: 16
+num_workers: 8
+resume_training: false
+run_name: !!python/object/apply:pathlib.WindowsPath
+- r1
+sampling_rate: 16000
+save_interval: 100
+save_path: outputs
+scheduler: null
+seq_len: 16384
+use_balanced_sampler: false
+use_bg: false
+use_ddp: false
+use_dp: false
+wd: 1.0e-05
